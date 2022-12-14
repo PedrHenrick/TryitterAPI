@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using TryitterWebAPI.Models;
 using TryitterWebAPI.Repository;
 
@@ -15,6 +16,7 @@ namespace TryitterWebAPI.Controllers
             _repository = repository;
         }
 
+        [Authorize]
         [HttpPost]
         public IActionResult Post([FromBody] Post post)
         {
@@ -26,6 +28,7 @@ namespace TryitterWebAPI.Controllers
             return CreatedAtAction("Get", new { id = post.PostId }, post);
         }
 
+        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Post post)
         {
@@ -42,6 +45,7 @@ namespace TryitterWebAPI.Controllers
             return Ok();
         }
 
+        [Authorize]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
