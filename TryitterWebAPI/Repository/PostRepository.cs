@@ -13,8 +13,6 @@ namespace TryitterWebAPI.Repository
             _tryitterContext = tryitterContext;
         }
 
-        public async Task<IEnumerable<Post>> GetPosts() => await _tryitterContext.Posts.ToListAsync();
-
         public async Task<Post> GetPostById(int id) => await _tryitterContext.Posts.Where(s => s.PostId == id).FirstOrDefaultAsync();
 
         public async Task<string> CreatePost(Post post)
