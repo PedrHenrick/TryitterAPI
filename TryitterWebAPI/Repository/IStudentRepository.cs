@@ -8,7 +8,7 @@ namespace TryitterAPI.Repository
         Task<Student> GetStudentById(int id);
         Task<IEnumerable<Student>> GetStudentsWithPosts();
         Task<string> CreateStudent(Student student);
-        //Task<string> UpdateStudent(Student student, int studentId);
+        string UpdateStudent(Student student, int studentId);
         void DeleteStudent(int id);
     }
 }

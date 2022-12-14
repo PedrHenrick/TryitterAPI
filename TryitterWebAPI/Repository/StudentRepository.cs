@@ -41,12 +41,12 @@ namespace TryitterAPI.Repository
             return "Usuário adicionado com sucesso";
         }
 
-        //public async Task<string> UpdateStudent(Student studentNewInformation, int id)
-        //{
-        //    await _tryitterContext.Students.Update(studentNewInformation);
-        //    _tryitterContext.SaveChanges();
-        //    return "Usuário atualizado com sucesso";
-        //}
+        public string UpdateStudent(Student studentNewInformation, int id)
+        {
+            _tryitterContext.Students.Update(studentNewInformation);
+            _tryitterContext.SaveChanges();
+            return "Usuário atualizado com sucesso";
+        }
 
         public async void DeleteStudent(int id)
         {
