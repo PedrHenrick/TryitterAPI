@@ -1,7 +1,10 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using System.Text;
 using TryitterWebAPI.Repository;
-using TryitterWebAPI.Repository;
+using TryitterWebAPI.Token;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -73,7 +76,7 @@ builder.Services.AddAuthentication(options =>
         ValidateIssuer = false,
         ValidateAudience = false,
         ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(TokenConstant.Secret))
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Constant.Secret))
     };
 });
 
