@@ -2,11 +2,11 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Migrations;
-using TryitterAPI.Repository;
+using TryitterWebAPI.Repository;
 
 #nullable disable
 
-namespace TryitterAPI.Migrations
+namespace TryitterWebAPI.Migrations
 {
     [DbContext(typeof(TryitterContext))]
     [Migration("20221214004714_CreateStudentAndPostTable")]
@@ -22,7 +22,7 @@ namespace TryitterAPI.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("TryitterAPI.Models.Post", b =>
+            modelBuilder.Entity("TryitterWebAPI.Models.Post", b =>
             {
                 b.Property<int>("Id")
                     .ValueGeneratedOnAdd()
@@ -47,7 +47,7 @@ namespace TryitterAPI.Migrations
                 b.ToTable("Posts");
             });
 
-            modelBuilder.Entity("TryitterAPI.Models.Student", b =>
+            modelBuilder.Entity("TryitterWebAPI.Models.Student", b =>
             {
                 b.Property<int>("StudentId")
                     .ValueGeneratedOnAdd()
@@ -81,9 +81,9 @@ namespace TryitterAPI.Migrations
                 b.ToTable("Students");
             });
 
-            modelBuilder.Entity("TryitterAPI.Models.Post", b =>
+            modelBuilder.Entity("TryitterWebAPI.Models.Post", b =>
             {
-                b.HasOne("TryitterAPI.Models.Student", "Student")
+                b.HasOne("TryitterWebAPI.Models.Student", "Student")
                     .WithMany("Posts")
                     .HasForeignKey("StudentId")
                     .OnDelete(DeleteBehavior.Cascade)
@@ -92,7 +92,7 @@ namespace TryitterAPI.Migrations
                 b.Navigation("Student");
             });
 
-            modelBuilder.Entity("TryitterAPI.Models.Student", b =>
+            modelBuilder.Entity("TryitterWebAPI.Models.Student", b =>
             {
                 b.Navigation("Posts");
             });

@@ -1,7 +1,7 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace TryitterAPI.Models
+namespace TryitterWebAPI.Models
 {
     public class Post
     {

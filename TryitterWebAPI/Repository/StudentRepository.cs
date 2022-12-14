@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using System.Threading.Channels;
-using TryitterAPI.Models;
+using TryitterWebAPI.Models;
 
-namespace TryitterAPI.Repository
+namespace TryitterWebAPI.Repository
 {
     public class StudentRepository : IStudentRepository
     {

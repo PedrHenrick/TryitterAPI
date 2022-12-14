@@ -1,4 +1,4 @@
-﻿using TryitterAPI.Models;
+﻿using TryitterWebAPI.Models;
 
 namespace TryitterWebAPI.Repository
 {

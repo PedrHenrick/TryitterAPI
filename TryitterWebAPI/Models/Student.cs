@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TryitterAPI.Models
+namespace TryitterWebAPI.Models
 {
     public class Student
     {

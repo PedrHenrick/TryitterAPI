@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace TryitterAPI.Migrations
+namespace TryitterWebAPI.Migrations
 {
     public partial class CreateStudentAndPostTable : Migration
     {

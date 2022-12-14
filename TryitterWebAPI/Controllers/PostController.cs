@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TryitterAPI.Models;
+using TryitterWebAPI.Models;
 using TryitterWebAPI.Repository;
 
 namespace TryitterWebAPI.Controllers

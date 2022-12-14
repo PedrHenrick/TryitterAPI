@@ -1,10 +1,13 @@
 using Microsoft.EntityFrameworkCore;
-using TryitterAPI.Repository;
+using TryitterWebAPI.Repository;
+using TryitterWebAPI.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<TryitterContext>(optionsAction: options
     => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<StudentRepository>();
+builder.Services.AddScoped<PostRepository>();
 
 builder.Services.AddScoped<ITryitterContext, TryitterContext>();
 builder.Services.AddControllers();
