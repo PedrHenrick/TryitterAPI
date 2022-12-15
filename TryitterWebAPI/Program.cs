@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using System.Text;
+using TryitterWebAPI.Interfaces;
 using TryitterWebAPI.Repository;
 using TryitterWebAPI.Token;
 
@@ -13,6 +14,7 @@ builder.Services.AddDbContext<TryitterContext>(optionsAction: options
 
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<IPostRepository, PostRepository>();
+builder.Services.AddScoped<ILoginRepository, LoginRepository>();
 
 
 builder.Services.AddScoped<ITryitterContext, TryitterContext>();
