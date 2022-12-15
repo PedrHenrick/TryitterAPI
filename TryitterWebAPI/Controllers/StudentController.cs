@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using TryitterWebAPI.Interfaces;
 using TryitterWebAPI.Models;
 using TryitterWebAPI.Repository;
 
@@ -33,6 +34,19 @@ namespace TryitterWebAPI.Controller
                 return NotFound();
             }
             return Ok(student);
+        }
+
+        [Authorize]
+        [HttpGet("posts")]
+        public async Task<IActionResult> GetStudentsWithPosts()
+        {
+            var students = await _repository.GetStudentsWithPosts();
+            if (!students.Any() == true)
+            {
+                return NotFound("Students not fount");
+            }
+
+            return Ok(students);
         }
 
         [Authorize]

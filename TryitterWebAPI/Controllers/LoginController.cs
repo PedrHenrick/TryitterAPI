@@ -2,7 +2,6 @@
 using Microsoft.AspNetCore.Mvc;
 using TryitterWebAPI.Models;
 using TryitterWebAPI.Interfaces;
-using TryitterWebAPI.Repository;
 
 namespace TryitterWebAPI.Controllers
 {

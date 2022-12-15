@@ -8,8 +8,10 @@ namespace TryitterWebAPI.Repository
     public class LoginRepository : ILoginRepository
     {
         protected readonly TryitterContext _tryitterContext;
-
-        public LoginRepository(TryitterContext tryitterContext) => _tryitterContext = tryitterContext;
+        public LoginRepository(TryitterContext tryitterContext)
+        {
+            _tryitterContext = tryitterContext;
+        }
 
         public async Task<string> TokenGenerate(string email, string password)
         {
