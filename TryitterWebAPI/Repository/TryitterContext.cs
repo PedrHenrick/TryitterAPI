@@ -11,5 +11,13 @@ namespace TryitterWebAPI.Repository
 
         public DbSet<Post> Posts { get; set; }
         public DbSet<Student> Students { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Post>()
+                .HasOne(x => x.Student)
+                .WithMany(x => x.Posts)
+                .HasForeignKey(x => x.PostId);
+        }
     }
 }
