@@ -36,18 +36,6 @@ namespace TryitterWebAPI.Controller
         }
 
         [Authorize]
-        [HttpPost]
-        public IActionResult Post([FromBody] Student student)
-        {
-            if (student == null)
-            {
-                return BadRequest();
-            }
-            _repository.CreateStudent(student);
-            return CreatedAtAction("Get", new { id = student.StudentId }, student);
-        }
-
-        [Authorize]
         [HttpPut("{id}")]
         public IActionResult Put(int id, [FromBody] Student student)
         {
