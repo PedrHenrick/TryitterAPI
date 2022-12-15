@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TryitterWebAPI.Models;
 
-namespace TryitterWebAPI.Repository
+namespace TryitterWebAPI.Interfaces
 {
     public interface ITryitterContext
     {

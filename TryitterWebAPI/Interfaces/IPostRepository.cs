@@ -1,6 +1,6 @@
 ﻿using TryitterWebAPI.Models;
 
-namespace TryitterWebAPI.Repository
+namespace TryitterWebAPI.Interfaces
 {
     public interface IPostRepository
     {

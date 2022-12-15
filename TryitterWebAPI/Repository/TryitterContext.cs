@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TryitterWebAPI.Interfaces;
 using TryitterWebAPI.Models;
 
 namespace TryitterWebAPI.Repository

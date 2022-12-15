@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata;
 using System.Threading.Channels;
+using TryitterWebAPI.Interfaces;
 using TryitterWebAPI.Models;
 
 namespace TryitterWebAPI.Repository
@@ -33,13 +34,6 @@ namespace TryitterWebAPI.Repository
                 }).ToList()
             }
         ).ToListAsync();
-
-        public async Task<string> CreateStudent(Student student)
-        {
-            await _tryitterContext.Students.AddAsync(student);
-            _tryitterContext.SaveChanges();
-            return "Usuário adicionado com sucesso";
-        }
 
         public string UpdateStudent(Student studentNewInformation, int id)
         {
