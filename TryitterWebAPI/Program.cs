@@ -12,12 +12,11 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<TryitterContext>(optionsAction: options
     => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped<ITryitterContext, TryitterContext>();
+builder.Services.AddScoped<ILoginRepository, LoginRepository>();
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<IPostRepository, PostRepository>();
-builder.Services.AddScoped<ILoginRepository, LoginRepository>();
 
-
-builder.Services.AddScoped<ITryitterContext, TryitterContext>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
